@@ -8,7 +8,6 @@
         .pet{
             background-image: url('img/sad.png');
             background-repeat: no-repeat;
-            background-size: contain;
             height: 400px;
             width: 300px;
             cursor: pointer;
@@ -16,14 +15,28 @@
         .pet img{
             width: 100%;
         }
-        .pet:hover{
+        /* .pet:hover{
             background-image: url(img/happy.png);
-        }
+        } */
     </style>
 </head>
 <body>
     <div class="pet">
         <img src="" alt="">
     </div>
+
+    <script>
+        const petEl= document.querySelector('.pet')
+
+        petEl.addEventListener('mousedown', ()=>{
+            petEl.style.backgroundImage = "url('img/happy.png')"
+            petEl.style.backgroundRepeat= "no-repeat"
+        })
+
+        petEl.addEventListener('mouseup', ()=>{
+            petEl.style.backgroundImage = "url('img/sad.png')"
+            petEl.style.backgroundRepeat= "no-repeat"
+        })
+    </script>
 </body>
 </html>
